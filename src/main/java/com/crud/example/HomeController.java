@@ -10,14 +10,10 @@ import java.util.Locale;
 
 @Controller
 public class HomeController {
+
     @RequestMapping("/")
-    public String home(Locale locale, Model model) {
-        Date date = new Date();
-        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.FULL, locale);
-
-        String formattedDate = dateFormat.format(date);
-
-        model.addAttribute("serverTime", formattedDate);
-        return "home";
+    public String home() {
+        // 'BoardController'의 'boardList' 메서드로 리다이렉트
+        return "redirect:/board/posts";
     }
 }

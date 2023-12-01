@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import="com.crud.dao.BoardDAO, com.crud.bean.BoardVO"%>
+ <%@page import="com.crud.example.BoardDAO, com.crud.example.BoardVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +13,8 @@
 <form:form modelAttribute="u" action="../editok" method="post">
 	<form:hidden path="seq"/>
 	<table id="edit">
-		<tr><td>Category:</td><td><form:input path="category"/></td></tr>
 		<tr><td>Title:</td><td><form:input path="title"/></td></tr>
+		<tr><td>Category:</td><td><form:input path="category"/></td></tr>
 		<tr><td>Writer:</td><td><form:input path="writer"/></td></tr>
 		<tr><td>Content:</td><td><form:textarea cols="50" rows="5" path="content"/></td></tr>
 		<tr><td colspan="2"><input type="submit" value="Edit Post"/>

@@ -1,7 +1,5 @@
 package com.crud.example;
 
-import com.crud.bean.BoardVO;
-
 import java.util.List;
 
 public interface BoardService {

@@ -1,7 +1,5 @@
 package com.crud.example;
 
-import com.crud.bean.BoardVO;
-import com.crud.dao.BoardDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

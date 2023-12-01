@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.crud.dao.BoardDAO, com.crud.bean.BoardVO,java.util.*"%>
+<%@ page import="com.crud.example.BoardDAO, com.crud.example.BoardVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -44,8 +44,8 @@
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
-	<th>Category</th>
 	<th>Title</th>
+	<th>Category</th>
 	<th>Writer</th>
 	<th>Content</th>
 	<th>Regdate</th>
@@ -55,8 +55,8 @@
 <c:forEach items="${list}" var="u">
 	<tr>
 		<td>${u.seq}</td>
-		<td>${u.category}</td>
 		<td>${u.title}</td>
+		<td>${u.category}</td>
 		<td>${u.writer}</td>
 		<td>${u.content}</td>
 		<td>${u.regdate}</td>
