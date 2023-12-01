@@ -63,4 +63,11 @@ public class BoardController {
         }
         return "redirect:../posts";
     }
+    @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+    public String viewPost(@PathVariable("id") int id, Model model) {
+        BoardVO boardVO = boardService.getBoard(id);
+        model.addAttribute("board", boardVO);
+        return "view"; // 상세보기 페이지의 실제 뷰 이름
+    }
+
 }

@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: ram
+  Date: 2023/11/30
+  Time: 8:40 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.crud.example.BoardDAO, com.crud.example.BoardVO,java.util.*"%>
@@ -51,6 +58,7 @@
 	<th>Regdate</th>
 	<th>Edit</th>
 	<th>Delete</th>
+	<th>View</th>
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
@@ -62,6 +70,7 @@
 		<td>${u.regdate}</td>
 		<td><a href="editform/${u.seq}">Edit</a></td>
 		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
+		<td><a href="view/${u.seq}">View</a></td>
 	</tr>
 </c:forEach>
 </table>
