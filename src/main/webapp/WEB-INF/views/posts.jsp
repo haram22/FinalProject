@@ -41,7 +41,7 @@
 			width: 300px;
 			border-radius: 5px;
 			padding: 10px;
-			background-color: #f2f2f2;
+			background-color: white;
 			text-align: center;
 		}
 		.card:hover {
@@ -71,7 +71,7 @@
 			<p>무게: ${u.weight}</p>
 			<p>내용: ${u.content}</p>
 			<p>카메라: ${u.camera}</p>
-			<p>이미지: ${u.image}</p>
+			<img src="${u.image}" alt="Image" style="max-width: 100%; height: auto;">
 			<a href="editform/${u.seq}">Edit</a> |
 			<a href="javascript:delete_ok('${u.seq}')">Delete</a> |
 			<a href="view/${u.seq}">View</a>
