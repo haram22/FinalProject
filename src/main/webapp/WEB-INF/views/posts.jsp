@@ -5,75 +5,80 @@
   Time: 8:40 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.crud.example.BoardDAO, com.crud.example.BoardVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>free board</title>
-<style>
-#list {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-#list td, #list th {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align:center;
-}
-#list tr:nth-child(even){background-color: #f2f2f2;}
-#list tr:hover {background-color: #ddd;}
-#list th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #006bb3;
-  color: white;
-}
-</style>
-<script>
-	function delete_ok(id){
-		let a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deleteok/' + id;
-	}
-</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>free board</title>
+	<style>
+		.round-button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #006bb3;
+			color: white;
+			border-radius: 20px;
+			text-decoration: none;
+			font-weight: bold;
+			position: fixed;
+			top: 20px;
+			right: 20px;
+		}
+		.round-button:hover {
+			background-color: #0056a3;
+		}
+		.card-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: center;
+		}
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+			width: 300px;
+			border-radius: 5px;
+			padding: 10px;
+			background-color: #f2f2f2;
+			text-align: center;
+		}
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		.card h4, .card p {
+			margin: 4px 0;
+		}
+	</style>
+	<script>
+		function delete_ok(id){
+			let a = confirm("정말로 삭제하겠습니까?");
+			if(a) location.href='deleteok/' + id;
+		}
+	</script>
 </head>
-<body>
+<body style="background-color: black">
 <div>
-	<h1>자유게시판</h1>
-
+	<h1 style="color: white">APPLE</h1>
 </div>
 <br>
-<table id="list" width="90%">
-<tr>
-	<th>Id</th>
-	<th>Title</th>
-	<th>Category</th>
-	<th>Writer</th>
-	<th>Content</th>
-	<th>Regdate</th>
-	<th>Edit</th>
-	<th>Delete</th>
-	<th>View</th>
-</tr>
-<c:forEach items="${list}" var="u">
-	<tr>
-		<td>${u.seq}</td>
-		<td>${u.title}</td>
-		<td>${u.category}</td>
-		<td>${u.writer}</td>
-		<td>${u.content}</td>
-		<td>${u.regdate}</td>
-		<td><a href="editform/${u.seq}">Edit</a></td>
-		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
-		<td><a href="view/${u.seq}">View</a></td>
-	</tr>
-</c:forEach>
-</table>
-<br/><a href="add">Add New Post</a>
+<div class="card-container">
+	<c:forEach items="${list}" var="u">
+		<div class="card">
+			<h4>${u.name}</h4>
+			<p>가격: ${u.price} 원</p>
+			<p>무게: ${u.weight}</p>
+			<p>내용: ${u.content}</p>
+			<p>카메라: ${u.camera}</p>
+			<p>이미지: ${u.image}</p>
+			<a href="editform/${u.seq}">Edit</a> |
+			<a href="javascript:delete_ok('${u.seq}')">Delete</a> |
+			<a href="view/${u.seq}">View</a>
+		</div>
+	</c:forEach>
+</div>
+<br/>
+<a href="add" class="round-button">Add</a>
 </body>
 </html>

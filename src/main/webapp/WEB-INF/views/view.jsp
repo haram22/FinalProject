@@ -16,10 +16,12 @@
 <body>
 <h1>🐻 상세보기 🐻</h1>
 <table id="edit">
-    <tr><td>Title:</td><td>${board.title}</td></tr>
-    <tr><td>Category:</td><td>${board.category}</td></tr>
-    <tr><td>Writer:</td><td>${board.writer}</td></tr>
+    <tr><td>Name:</td><td>${board.name}</td></tr>
+    <tr><td>Price:</td><td>${board.price}</td></tr>
+    <tr><td>Weight:</td><td>${board.weight}</td></tr>
     <tr><td>Content:</td><td>${board.content}</td></tr>
+    <tr><td>Camera:</td><td>${board.camera}</td></tr>
+    <tr><td>Color:</td><td>${board.color}</td></tr>
     <tr><td>RegDate:</td><td>${board.regdate}</td></tr>
 </table>
 </body>

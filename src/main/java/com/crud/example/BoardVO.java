@@ -4,12 +4,14 @@ import java.util.Date;
 
 public class BoardVO {
     private int seq;
-    private String category;
-    private String title;
-    private String writer;
+    private String price;
+    private String name;
+    private String weight;
     private String content;
+    private String color;
+    private String image;
     private Date regdate;
-    private int cnt;
+    private int camera;
 
     public int getSeq() {
         return seq;
@@ -17,23 +19,23 @@ public class BoardVO {
     public void setSeq(int seq) {
         this.seq = seq;
     }
-    public String getCategory() {
-        return category;
+    public String getPrice() {
+        return price;
     }
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPrice(String price) {
+        this.price = price;
     }
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getWriter() {
-        return writer;
+    public String getWeight() {
+        return weight;
     }
-    public void setWriter(String writer) {
-        this.writer = writer;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
     public String getContent() {
         return content;
@@ -41,17 +43,29 @@ public class BoardVO {
     public void setContent(String content) {
         this.content = content;
     }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
     public Date getRegdate() {
         return regdate;
     }
     public void setRegdate(Date regdate) {
         this.regdate = regdate;
     }
-    public int getCnt() {
-        return cnt;
+    public int getCamera() {
+        return camera;
     }
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
+    public void setCamera(int camera) {
+        this.camera = camera;
     }
 
 }
