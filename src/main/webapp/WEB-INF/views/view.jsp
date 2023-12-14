@@ -21,7 +21,11 @@
     <tr><td>Weight:</td><td>${board.weight}</td></tr>
     <tr><td>Content:</td><td>${board.content}</td></tr>
     <tr><td>Camera:</td><td>${board.camera}</td></tr>
-    <tr><td>Color:</td><td>${board.color}</td></tr>
+    <tr>
+        <td>Color:</td>
+        <td style="background-color: ${board.color}; width: 100px; height: 20px;"></td>
+        <td> ${board.color}</td>
+    </tr>
     <tr><td>RegDate:</td><td>${board.regdate}</td></tr>
 </table>
 </body>

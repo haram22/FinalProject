@@ -33,19 +33,21 @@
 			display: flex;
 			flex-wrap: wrap;
 			gap: 20px;
-			justify-content: center;
+			justify-content: flex-start;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
 		}
 		.card {
 			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-			transition: 0.3s;
 			width: 300px;
 			border-radius: 5px;
 			padding: 10px;
 			background-color: white;
 			text-align: center;
+			transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 		}
 		.card:hover {
-			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+			transform: scale(1.03);
+			box-shadow: 0 12px 24px 0 rgba(0,0,0,0.3);
 		}
 		.card h4, .card p {
 			margin: 4px 0;

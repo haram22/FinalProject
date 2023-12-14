@@ -22,7 +22,10 @@
     <tr><td>Price:</td><td><input type="text" name="price"/></td></tr>
     <tr><td>Weight:</td><td><input type="text" name="weight"/></td></tr>
     <tr><td>Image:</td><td><input type="text" name="image"/></td></tr>
-    <tr><td>Color:</td><td><input type="text" name="color"/></td></tr>
+    <tr>
+        <td>Color:</td>
+        <td><input type="color" name="color" id="colorPicker"></td>
+    </tr>
     <tr>
         <td>Camera:</td>
         <td>
