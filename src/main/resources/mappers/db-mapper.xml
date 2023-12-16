@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+    <insert id="insertBoard">
+        insert into APPLE (name, weight, content, color, image, camera, price)
+        values
+        (#{name} , #{weight} , #{content}, #{color} , #{image} , #{camera}, #{price})
+    </insert>
+    <update id="updateBoard">
+        update APPLE
+        set name=#{name}, weight=#{weight}, content=#{content}, color=#{color}, image=#{image}, camera=#{camera},price=#{price}
+        where seq=#{seq}
+    </update>
+    <delete id="deleteBoard">
+        delete from APPLE where seq=#{seq}
+    </delete>
+    <select id="getBoard" resultType="board">
+        select * from APPLE where seq=#{seq}
+    </select>
+    <select id="getBoardList" resultType="board">
+        select * from APPLE order by seq desc
+    </select>
+<!--    <select id="selectBoard" resultType="board">-->
+<!--        select * from BOARD where seq = #{seq}-->
+<!--    </select>-->
+</mapper>

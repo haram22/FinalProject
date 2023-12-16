@@ -1,7 +1,7 @@
 package com.crud.example;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
@@ -12,34 +12,21 @@ import java.util.List;
 @Repository
 public class BoardDAO {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    SqlSession sqlSession;
     public int insertBoard(BoardVO vo) {
-        String sql = "insert into APPLE (name, weight, content, color, image, camera, price) values ('"
-                + vo.getName() + "', '"
-                + vo.getWeight() + "', '"
-                + vo.getContent() + "', '"
-                + vo.getColor() + "', '"
-                + vo.getImage() + "', '"
-                + vo.getCamera() + "', '"
-                + vo.getPrice() + "')";
-        return jdbcTemplate.update(sql);
+        int result = sqlSession.insert("Board.insertBoard", vo);
+        return result;
     }
 
     // 글 삭제
     public int deleteBoard(int seq) {
-        String sql = "delete from APPLE where seq = " + seq;
-        return jdbcTemplate.update(sql);
+        int result = sqlSession.delete("Board.deleteBoard",seq);
+        return result;
     }
 
     public int updateBoard(BoardVO vo) {
-        String sql = "update APPLE set name='" + vo.getName() + "', "
-                + "price='" + vo.getPrice() + "', "
-                + "content='" + vo.getContent() + "', "
-                + "color='" + vo.getColor() + "', "
-                + "image='" + vo.getImage() + "', "
-                + "camera='" + vo.getCamera() + "', "
-                + "weight='" + vo.getWeight() + "' where seq=" + vo.getSeq();
-        return jdbcTemplate.update(sql);
+        int result = sqlSession.update("Board.updateBoard",vo);
+        return result;
     }
 
     class BoardRowMapper implements RowMapper<BoardVO> {
@@ -64,12 +51,12 @@ public class BoardDAO {
     }
 
     public BoardVO getBoard(int seq) {
-        String sql = "select * from APPLE where seq=" + seq;
-        return jdbcTemplate.queryForObject(sql, new BoardRowMapper());
+        BoardVO one = sqlSession.selectOne("Board.getBoard",seq);
+        return one;
     }
 
     public List<BoardVO> getBoardList() {
-        String sql = "select * from APPLE order by regdate desc";
-        return jdbcTemplate.query(sql, new BoardRowMapper());
+        List<BoardVO> list = sqlSession.selectList("Board.getBoardList");
+        return list;
     }
 }
