@@ -39,11 +39,16 @@
 		.card {
 			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 			width: 300px;
-			border-radius: 5px;
-			padding: 10px;
+			border-radius: 10px;
+			padding: 30px;
 			background-color: white;
 			text-align: center;
+			margin-left: 40px;
 			transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		}
+		.card a {
+			text-decoration: none;
+			color: #006bb3;
 		}
 		.card:hover {
 			transform: scale(1.03);
@@ -68,15 +73,12 @@
 <div class="card-container">
 	<c:forEach items="${list}" var="u">
 		<div class="card">
+			<img src="${u.image}" alt="Image" style="max-width: 100%; height: auto; padding-top: 20px; padding-bottom: 20px;">
 			<h4>${u.name}</h4>
-			<p>가격: ${u.price} 원</p>
-			<p>무게: ${u.weight}</p>
-			<p>내용: ${u.content}</p>
-			<p>카메라: ${u.camera}</p>
-			<img src="${u.image}" alt="Image" style="max-width: 100%; height: auto;">
-			<a href="editform/${u.seq}">Edit</a> |
-			<a href="javascript:delete_ok('${u.seq}')">Delete</a> |
-			<a href="view/${u.seq}">View</a>
+			<p>${u.price} 원</p>
+			<a href="editform/${u.seq}">✏️</a> |
+			<a href="javascript:delete_ok('${u.seq}')">❌</a> |
+			<a href="view/${u.seq}">상세보기</a>
 		</div>
 	</c:forEach>
 </div>
